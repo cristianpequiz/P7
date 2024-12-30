@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 th:text="${fechaActual}"> </h1>
+        
+        <h1>Gestor De Tareas</h1>
+        <a th:href="@{/agregar}"> Agregar Tarea </a>
+        <h2>Hoy</h2>  
+         <table border="2">
+       <!-- <tr>
+                <>Titulo</th> 
+            </tr> -->
+         
+            <tr th:each="tareaH: ${tareasH}">
+                
+                <td th:text="${tareaH.titulo}">Muestra el titulo</td>
+                <td th:text="${tareaH.fechaLimite}">Muestra la fecha</td>
+                <!-- <td> <a th:href="@{/borrarP (id_tareas=${tareaP.id_tareas})}" th:text="Borrar"/> </td>
+                <td> <a th:href="@{/verTP (id_tareas=${tareaP.id_tareas})}" th:text="Ver"/></td> -->
+                
+            </tr>
+            
+        </table> 
+         
+        <br>
+        <br> 
+        <br>
+        <h2>Prioridad</h2>
+        <table border="2">
+       <!-- <tr>
+                <>Titulo</th> 
+            </tr> -->
+         
+            <tr th:each="tareaP: ${tareasP}">
+                
+                <td th:text="${tareaP.titulo}">Muestra el titulo</td>
+                <td th:text="${tareaP.fechaLimite}">Muestra la fecha</td>
+                <td> <a th:href="@{/borrarP (id_tareas=${tareaP.id_tareas})}" th:text="Borrar"/> </td>
+                <td> <a th:href="@{/verTP (id_tareas=${tareaP.id_tareas})}" th:text="Ver"/></td>
+                
+            </tr>
+            
+        </table> 
+        <br>
+        <br>
+        <br>
+        <h2>Tareas</h2>
+        <table border="2">
+       <!-- <tr>
+                <>Titulo</th>
+            </tr> -->
+            <tr th:each="tarea: ${tareas}">
+                
+                <td th:text="${tarea.titulo}">Muestra el titulo</td>
+                <td th:text="${tarea.fechaLimite}">Muestra la fecha</td>
+                <td> <a th:href="@{/borrar (id_tareas=${tarea.id_tareas})}" th:text="Borrar"/></td>
+                <td> <a th:href="@{/verT (id_tareas=${tarea.id_tareas})}" th:text="Ver"/></td>
+                
+            </tr>
+            
+        </table> 
+    </body>
+</html>
+   
+ 

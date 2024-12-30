@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a th:href="@{/volver}">Volver</a>
+        <form th:action="@{/salvar}" method="post" th:object="${tareas}">
+            <br>
+            <label for="titulo">Para el titulo</label>
+            <input type="text" name="titulo" id="titulo" th:field="*{titulo}"/>
+            <br> 
+            <label for="fecha_limite">Para la fecha limite(opcional)</label>
+            <input type="text" name="fechaLimite" id="fechaLimite" th:field="*{fechaLimite}"/>
+            <br>
+            <label for="prioridad">Para la prioridad</label>
+            <input type="checkbox" name="prioridad" id="prioridad" th:field="*{prioridad}" value="1"/>
+            <br>
+            <label for="notas">Para la nota de texto(opcional)</label>
+            <input type="text" name="notas" id="notas" th:field="*{notas}"/>
+            <br>
+            
+            <input type="submit" name="salvar" value="Guardar"/> 
+        </form>
+    </body> 
+</html>
